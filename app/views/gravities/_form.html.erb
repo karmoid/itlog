@@ -1,0 +1,25 @@
+<%= form_for(@gravity) do |f| %>
+  <% if @gravity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gravity.errors.count, "error") %> prohibited this gravity from being saved:</h2>
+
+      <ul>
+      <% @gravity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :component_id %><br />
+    <%= f.number_field :component_id %>
+  </div>
+  <div class="field">
+    <%= f.label :connected_to %><br />
+    <%= f.number_field :connected_to %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

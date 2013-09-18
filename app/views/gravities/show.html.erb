@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Component:</b>
+  <%= @gravity.component_id %>
+</p>
+
+<p>
+  <b>Connected to:</b>
+  <%= @gravity.connected_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_gravity_path(@gravity) %> |
+<%= link_to 'Back', gravities_path %>
