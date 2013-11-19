@@ -1,4 +1,6 @@
 Itlog::Application.routes.draw do
+  resources :usages
+
   resources :gravities
 
   resources :components

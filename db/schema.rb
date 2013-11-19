@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130911203618) do
+ActiveRecord::Schema.define(:version => 20131119212647) do
 
   create_table "components", :force => true do |t|
     t.string   "name"
@@ -21,12 +21,14 @@ ActiveRecord::Schema.define(:version => 20130911203618) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "gravities", :id => false, :force => true do |t|
+  create_table "gravities", :force => true do |t|
     t.integer  "component_id"
     t.integer  "connected_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "gravities", ["component_id", "connected_id"], :name => "index_gravities_on_component_id_and_connected_id", :unique => true
 
   create_table "kinds", :force => true do |t|
     t.string   "name"
@@ -42,5 +44,14 @@ ActiveRecord::Schema.define(:version => 20130911203618) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "usages", :force => true do |t|
+    t.integer  "component_id"
+    t.integer  "connected_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "usages", ["component_id", "connected_id"], :name => "index_usages_on_component_id_and_connected_id", :unique => true
 
 end

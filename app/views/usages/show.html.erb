@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Component:</b>
+  <%= @usage.component_id %>
+</p>
+
+<p>
+  <b>Connected:</b>
+  <%= @usage.connected_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_usage_path(@usage) %> |
+<%= link_to 'Back', usages_path %>

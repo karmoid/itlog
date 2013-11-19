@@ -5,17 +5,13 @@
     <th>Component</th>
     <th>Connected to</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @gravities.each do |gravity| %>
   <tr>
-    <td><%= gravity.component_id %></td>
-    <td><%= gravity.connected_to %></td>
-    <td><%= link_to 'Show', gravity %></td>
-    <td><%= link_to 'Edit', edit_gravity_path(gravity) %></td>
-    <td><%= link_to 'Destroy', gravity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= gravity.component.name %></td>
+    <td><%= gravity.connected.name %></td>
+    <td><%= link_to 'Show', gravity.component %></td>
   </tr>
 <% end %>
 </table>
