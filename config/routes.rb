@@ -5,9 +5,10 @@ Itlog::Application.routes.draw do
 
   resources :components
 
-  resources :kinds
-
-  resources :universes
+  
+  resources :universes do
+    resources :kinds
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

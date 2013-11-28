@@ -23,6 +23,7 @@ end
 
 gem 'jquery-rails'
 gem 'therubyracer'
+gem 'kendoui-rails'
 gem 'execjs'
 
 # To use ActiveModel has_secure_password

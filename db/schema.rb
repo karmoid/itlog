@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20131119212647) do
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "note"
+    t.string   "hr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "components", :force => true do |t|
     t.string   "name"
     t.text     "note"
@@ -20,6 +28,25 @@ ActiveRecord::Schema.define(:version => 20131119212647) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "deploy_links", :force => true do |t|
+    t.integer  "deployment_id"
+    t.integer  "host_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "deployments", :force => true do |t|
+    t.string   "name"
+    t.text     "note"
+    t.string   "hr"
+    t.integer  "sub_category_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "stacked"
+  end
+
+  add_index "deployments", ["sub_category_id"], :name => "index_deployments_on_sub_category_id"
 
   create_table "gravities", :force => true do |t|
     t.integer  "component_id"
@@ -37,6 +64,17 @@ ActiveRecord::Schema.define(:version => 20131119212647) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "sub_categories", :force => true do |t|
+    t.string   "name"
+    t.text     "note"
+    t.string   "hr"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "sub_categories", ["category_id"], :name => "index_sub_categories_on_category_id"
 
   create_table "universes", :force => true do |t|
     t.string   "name"

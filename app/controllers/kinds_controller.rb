@@ -2,6 +2,7 @@ class KindsController < ApplicationController
   # GET /kinds
   # GET /kinds.json
   def index
+    get_universe
     @kinds = Kind.all
 
     respond_to do |format|
@@ -80,4 +81,10 @@ class KindsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def get_universe
+    @universe = Universe.find(params[:universe_id])
+  end  
 end
