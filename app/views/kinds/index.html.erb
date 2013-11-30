@@ -1,29 +1,28 @@
-<h1><%= @universe.note %></h1>
-<p><%= @universe.name %></p>
-<h1>Listing kinds</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Note</th>
-    <th>Universe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @kinds.each do |kind| %>
-  <tr>
-    <td><%= kind.name %></td>
-    <td><%= kind.note %></td>
-    <td><%= kind.universe_id %></td>
-    <td><%= link_to 'Show', kind %></td>
-    <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
-    <td><%= link_to 'Destroy', kind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+
+
+
+<div class="jumbotron">
+  <h1><%= @universe.name %></h1>
+  <p><%= @universe.note %></p>
+  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+</div>
+            
+<h1>Type d'éléments</h1>
+  <div class="col-lg-4">
+    <div class="bs-example">
+      <div class="list-group">
+        <% @kinds.each do |kind| %>
+          <a href="<%= universe_kind_components_path(@universe,kind.id) %>" class="list-group-item">
+            <span class="badge"><%= kind.components.size %></span>
+            <h4 class="list-group-item-heading"><%= kind.name %></h4>
+            <p class="list-group-item-text"><%= kind.note %></p>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
 <%= link_to 'New Kind', new_universe_kind_path(@universe) %>

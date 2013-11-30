@@ -2,7 +2,8 @@ class ComponentsController < ApplicationController
   # GET /components
   # GET /components.json
   def index
-    @components = Component.all
+    get_universe_and_kind
+    @components = @kind.components
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,11 @@ class ComponentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+  def get_universe_and_kind
+    @kind = Kind.find(params[:kind_id])
+    @universe = Universe.find(params[:universe_id])
+  end  
+
 end

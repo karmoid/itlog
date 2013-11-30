@@ -3,11 +3,12 @@ Itlog::Application.routes.draw do
 
   resources :gravities
 
-  resources :components
 
   
   resources :universes do
-    resources :kinds
+    resources :kinds do
+      resources :components
+    end  
   end
 
   # The priority is based upon order of creation:
