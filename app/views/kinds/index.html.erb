@@ -1,25 +1,31 @@
-
-
-
-
-
-
 <div class="jumbotron">
   <h1><%= @universe.name %></h1>
   <p><%= @universe.note %></p>
   <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+
+                  <label class="control-label">Chargement en masse</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Fichier</span>
+                    <input class="form-control" type="text">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Charge</button>
+                    </span>
+                  </div>
+
 </div>
             
 <h1>Type d'éléments</h1>
   <div class="col-lg-4">
     <div class="bs-example">
       <div class="list-group">
+        <div>
         <% @kinds.each do |kind| %>
           <a href="<%= universe_kind_components_path(@universe,kind.id) %>" class="list-group-item">
-            <span class="badge"><%= kind.components.size %></span>
             <h4 class="list-group-item-heading"><%= kind.name %></h4>
             <p class="list-group-item-text"><%= kind.note %></p>
+            <a href="#"><span class="label label-info"><%= kind.components.size %></span></a>
           </a>
+        </div>
         <% end %>
       </div>
     </div>

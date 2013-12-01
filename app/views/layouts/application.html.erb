@@ -7,8 +7,141 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">Bootswatch</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="themes">
+            <li><a tabindex="-1" href="../default/">Default</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="../amelia/">Amelia</a></li>
+            <li><a tabindex="-1" href="../cerulean/">Cerulean</a></li>
+            <li><a tabindex="-1" href="../cosmo/">Cosmo</a></li>
+            <li><a tabindex="-1" href="../cyborg/">Cyborg</a></li>
+            <li><a tabindex="-1" href="../flatly/">Flatly</a></li>
+            <li><a tabindex="-1" href="../journal/">Journal</a></li>
+            <li><a tabindex="-1" href="../readable/">Readable</a></li>
+            <li><a tabindex="-1" href="../simplex/">Simplex</a></li>
+            <li><a tabindex="-1" href="../slate/">Slate</a></li>
+            <li><a tabindex="-1" href="../spacelab/">Spacelab</a></li>
+            <li><a tabindex="-1" href="../united/">United</a></li>
+            <li><a tabindex="-1" href="../yeti/">Yeti</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="../help/">Help</a>
+        </li>
+        <li>
+          <a href="http://news.bootswatch.com">Blog</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="download">
+            <li><a tabindex="-1" href="./bootstrap.min.css">bootstrap.min.css</a></li>
+            <li><a tabindex="-1" href="./bootstrap.css">bootstrap.css</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="./variables.less">variables.less</a></li>
+            <li><a tabindex="-1" href="./bootswatch.less">bootswatch.less</a></li>
+          </ul>
+        </li>
+      </ul>
 
-<%= yield %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
+        <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+      </ul>
 
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Navbar
+================================================== -->
+<div class="bs-docs-section clearfix">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="page-header">
+      <h1 id="navbar">Navbar</h1>
+    </div>
+
+    <div class="bs-example">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Active</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Dropdown header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <input class="form-control col-lg-8" placeholder="Search" type="text">
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.navbar -->
+          </div>
+        </div>
+      </div>
+
+	<%= yield %>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bs-example">
+              <h2>the ITLog initiative</h2>
+              <p>Une tentative de condenser toutes les informations (assets et relations)
+              	dans une base de données et un site web de recherche.</p>
+              <p><small>Petitement affiché.</small></p>
+              <p>La phrase suivante doit être <strong>affichée en Bold texte</strong>.</p>
+              <p>La phrase suivante doit être <em>affichée en italique</em>.</p>
+              <p>An abbreviation of the word itlog is <abbr title="Log information IT">Données IT</abbr>.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 </body>
 </html>

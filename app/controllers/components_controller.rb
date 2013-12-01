@@ -2,6 +2,7 @@ class ComponentsController < ApplicationController
   # GET /components
   # GET /components.json
   def index
+    @search = params[:srch_field] || ""
     get_universe_and_kind
     @components = @kind.components
 
